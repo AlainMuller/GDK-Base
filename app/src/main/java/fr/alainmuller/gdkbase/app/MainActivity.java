@@ -85,9 +85,11 @@ public class MainActivity extends Activity {
                 mHandler.post(new Runnable() {
                     @Override
                     public void run() {
+                        mAudioManager.playSoundEffect(Sounds.SUCCESS);
                         startAnotherActivity();
                     }
                 });
+                finish();
                 return true;
 
             // etc...
@@ -104,6 +106,5 @@ public class MainActivity extends Activity {
     private void startAnotherActivity() {
         //TODO : implement AnotherActivity
         //startActivity(new Intent(this, AnotherActivity.class));
-        finish();
     }
 }
